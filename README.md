@@ -63,3 +63,7 @@ The model files are taken from [here](https://github.com/kpzhang93/MTCNN_face_de
 46 human faces picture taken from here [here](https://twitter.com/MarvelStudios/status/961646528610779136/photo/1?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E961646528610779136%7Ctwgr%5E363937393b636f6e74726f6c&ref_url=https%3A%2F%2Findianexpress.com%2Farticle%2Fentertainment%2Fhollywood%2Fmarvel-cinematic-universe-ten-year-see-photo-5056933%2F)
 
 
+## References
+https://github.com/ksachdeva/opencv-mtcnn
+
+https://github.com/golunovas/mtcnn-cpp
