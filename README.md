@@ -56,7 +56,7 @@ Here is an example of how the execution of the sample application looks like
 
 ## Acknowledgments
 
-The model files are taken from https://github.com/kpzhang93/MTCNN_face_detection_alignment/tree/master/code
+The model files are taken from [here](https://github.com/kpzhang93/MTCNN_face_detection_alignment/tree/master/code)
 
 10 human faces picture taken from here [here](https://www.popsugar.com/celebrity/photo-gallery/43737931/image/43738767/July-2014)
 
