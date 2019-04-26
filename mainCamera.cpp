@@ -76,6 +76,8 @@ int main(int argc, char **argv)
         cerr << "ERROR: Can't initialize camera capture" << endl;
         return 1;
     }
+    capture.set(CAP_PROP_FRAME_WIDTH,640);
+    capture.set(CAP_PROP_FRAME_HEIGHT,480);
 
     cout << "Frame width: " << capture.get(CAP_PROP_FRAME_WIDTH) << endl;
     cout << "     height: " << capture.get(CAP_PROP_FRAME_HEIGHT) << endl;
