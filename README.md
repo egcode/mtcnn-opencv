@@ -35,20 +35,12 @@ make
 # running the sample application
 cd build
 
-
-# Camera Inference
-./infer_cam <path_to_models_dir>
-
-# example:
+# Camera Inference example (./infer_cam <path_to_models_dir>):
 ./infer_cam ../data/models
 
 
 
-
-# Photo Inference
-./infer_photo <path_to_models_dir> <path_to_test_image>
-
-# examples:
+# Photo Inference examples (./infer_photo <path_to_models_dir> <path_to_test_image>):
 
 # An image with 10 human faces
 ./infer_photo ../data/models ../data/got.jpg 
