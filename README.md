@@ -48,7 +48,7 @@ cd build
 # Photo Inference
 ./infer_photo <path_to_models_dir> <path_to_test_image>
 
-# example:
+# examples:
 
 # An image with 10 human faces
 ./infer_photo ../data/models ../data/got.jpg 
