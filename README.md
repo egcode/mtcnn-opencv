@@ -37,7 +37,7 @@ cd build
 
 
 # Camera Inference
-./sample/app <path_to_models_dir>
+./infer_cam <path_to_models_dir>
 
 # example:
 ./infer_cam ../data/models
@@ -46,7 +46,7 @@ cd build
 
 
 # Photo Inference
-./sample/app <path_to_models_dir> <path_to_test_image>
+./infer_photo <path_to_models_dir> <path_to_test_image>
 
 # example:
 
