@@ -59,7 +59,7 @@ cd build
 
 ```
 
-## Result
+## Results
 
 Here is an example of how the execution of the sample application looks like
 
