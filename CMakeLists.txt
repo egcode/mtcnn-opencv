@@ -9,13 +9,22 @@ find_package( OpenCV REQUIRED )
 find_package( Boost REQUIRED COMPONENTS system filesystem timer )
 include_directories( ${Boost_INCLUDE_DIRS} )
 
-set(sources
+set(SOURCES
 ./mtcnn/detector.cpp
 ./mtcnn/face.h 
 ./mtcnn/onet.cpp 
 ./mtcnn/pnet.cpp ./mtcnn/rnet.cpp
 ./mtcnn/detector.h ./mtcnn/helpers.h ./mtcnn/onet.h ./mtcnn/pnet.h ./mtcnn/rnet.h
 )
-add_executable (mtcnn_app main.cpp ${sources})
 
-target_link_libraries (mtcnn_app LINK_PUBLIC ${OpenCV_LIBS} ${Boost_LIBRARIES} )
+set(APP_SOURCES
+infer_photo.cpp
+infer_cam.cpp
+)
+
+foreach( sourcefile ${APP_SOURCES} )
+    # Simple string replace, to cut off .cpp.
+    string( REPLACE ".cpp" "" name ${sourcefile} )
+    add_executable( ${name} ${sourcefile} ${SOURCES} )
+    target_link_libraries (${name} LINK_PUBLIC ${OpenCV_LIBS} ${Boost_LIBRARIES} )
+endforeach( sourcefile ${APP_SOURCES} )

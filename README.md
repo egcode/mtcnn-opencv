@@ -34,15 +34,25 @@ make
 ```bash
 # running the sample application
 cd build
+
+# Camera Inference
+./sample/app <path_to_models_dir>
+
+# example:
+
+./infer_cam ../data/models
+
+
+# Photo Inference
 ./sample/app <path_to_models_dir> <path_to_test_image>
 
-# for example:
+# example:
 
 # An image with 10 human faces
-./mtcnn_app ../data/models ../data/got.jpg 
+./infer_photo ../data/models ../data/got.jpg 
 
 # An image with 46 human faces
-./mtcnn_app ../data/models ../data/marvel.jpg 
+./infer_photo ../data/models ../data/marvel.jpg 
 
 
 ```
