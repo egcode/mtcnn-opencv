@@ -13,7 +13,7 @@
 #include <iostream>
 
 //// rm -rf build; mkdir build;cd build;cmake ..;make;cd ..
-//// ./build/mtcnn_app ./data/models
+//// ./build/infer_cam ./data/models
 
 using namespace cv;
 using std::cout; using std::cerr; using std::endl;

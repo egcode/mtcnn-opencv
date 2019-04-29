@@ -8,6 +8,10 @@
 
 #include "mtcnn/detector.h"
 
+//// rm -rf build; mkdir build;cd build;cmake ..;make;cd ..
+//// ./build/infer_photo ./data/models ./data/got.jpg
+
+
 namespace fs = boost::filesystem;
 
 using rectPoints = std::pair<cv::Rect, std::vector<cv::Point>>;
