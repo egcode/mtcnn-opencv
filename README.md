@@ -17,7 +17,6 @@ https://kpzhang93.github.io/MTCNN_face_detection_alignment/paper/spl.pdf
 ### Requirements
 
 * OpenCV 4.1+
-* Boost FileSystem (1.58+)  [only required for the sample application]
 * CMake 3.2+
 
 I am using CMake as the build tool. Here are the steps to try the implementation -
