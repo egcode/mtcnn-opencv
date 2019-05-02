@@ -1,7 +1,3 @@
-#include <boost/filesystem.hpp>
-#include <boost/filesystem/path.hpp>
-#include <boost/timer/timer.hpp>
-
 #include <opencv2/dnn.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
@@ -9,10 +5,7 @@
 #include "mtcnn/detector.h"
 
 //// rm -rf build; mkdir build;cd build;cmake ..;make;cd ..
-//// ./build/infer_photo ./data/models ./data/got.jpg
-
-
-namespace fs = boost::filesystem;
+//// ./build/infer_photo ./data/got.jpg
 
 using rectPoints = std::pair<cv::Rect, std::vector<cv::Point>>;
 
@@ -33,38 +26,34 @@ static cv::Mat drawRectsAndPoints(const cv::Mat &img,
 
 int main(int argc, char **argv) {
 
-  if (argc < 3) {
+  if (argc < 2) {
     std::cerr << "Usage " << argv[0] << ": "
-              << "<model-dir> "
               << " "
               << "<test-image>\n";
     return -1;
   }
 
-  fs::path modelDir = fs::path(argv[1]);
-
   ProposalNetwork::Config pConfig;
-  pConfig.caffeModel = (modelDir / "det1.caffemodel").string();
-  pConfig.protoText = (modelDir / "det1.prototxt").string();
+  pConfig.caffeModel = "./data/models/det1.caffemodel";
+  pConfig.protoText = "./data/models/det1.prototxt";
   pConfig.threshold = 0.6f;
 
   RefineNetwork::Config rConfig;
-  rConfig.caffeModel = (modelDir / "det2.caffemodel").string();
-  rConfig.protoText = (modelDir / "det2.prototxt").string();
+  rConfig.caffeModel = "./data/models/det2.caffemodel";
+  rConfig.protoText = "./data/models/det2.prototxt";
   rConfig.threshold = 0.7f;
 
   OutputNetwork::Config oConfig;
-  oConfig.caffeModel = (modelDir / "det3.caffemodel").string();
-  oConfig.protoText = (modelDir / "det3.prototxt").string();
+  oConfig.caffeModel = "./data/models/det3.caffemodel";
+  oConfig.protoText = "./data/models/det3.prototxt";
   oConfig.threshold = 0.7f;
 
   MTCNNDetector detector(pConfig, rConfig, oConfig);
-  cv::Mat img = cv::imread(argv[2]);
+  cv::Mat img = cv::imread(argv[1]);
 
   std::vector<Face> faces;
 
   {
-    boost::timer::auto_cpu_timer t(3, "%w seconds\n");
     faces = detector.detect(img, 20.f, 0.709f);
   }
 
