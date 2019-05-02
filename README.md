@@ -43,10 +43,10 @@ cd build
 # Photo Inference examples (<app> <path_to_models_dir> <path_to_test_image>):
 
 # An image with 10 human faces
-./infer_photo ../data/models ../data/got.jpg 
+./infer_photo ../data/got.jpg 
 
 # An image with 46 human faces
-./infer_photo ../data/models ../data/marvel.jpg 
+./infer_photo ../data/marvel.jpg 
 
 
 ```
