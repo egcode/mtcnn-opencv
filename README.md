@@ -36,7 +36,7 @@ make
 cd build
 
 # Camera Inference example (<app> <path_to_models_dir>):
-./infer_cam ../data/models
+./infer_cam
 
 
 
