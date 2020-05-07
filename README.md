@@ -41,7 +41,7 @@ cd mtcnn-opencv
 ./build/infer_cam
 
 
-# Photo Inference examples (<app> <path_to_models_dir> <path_to_test_image>):
+# Photo Inference examples (<app> <path_to_test_image>):
 
 # An image with 10 human faces
 ./build/infer_photo ./data/got.jpg 
