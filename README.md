@@ -12,14 +12,15 @@ More info here - https://github.com/opencv/opencv/wiki/Deep-Learning-in-OpenCV
 https://kpzhang93.github.io/MTCNN_face_detection_alignment/paper/spl.pdf
 
 
-## Compile / Run
+## Quickstart
 
 ### Requirements
 
 * OpenCV 4.1+
 * CMake 3.2+
 
-I am using CMake as the build tool. Here are the steps to try the implementation -
+
+## Building
 
 ```bash
 git clone https://github.com/egcode/mtcnn-opencv.git
@@ -30,23 +31,23 @@ cmake ..
 make
 ```
 
+
+## Running
+
 ```bash
-# running the sample application
-cd build
+cd mtcnn-opencv
 
 # Camera Inference example (<app> <path_to_models_dir>):
-./infer_cam
-
+./build/infer_cam
 
 
 # Photo Inference examples (<app> <path_to_models_dir> <path_to_test_image>):
 
 # An image with 10 human faces
-./infer_photo ../data/got.jpg 
+./build/infer_photo ./data/got.jpg 
 
 # An image with 46 human faces
-./infer_photo ../data/marvel.jpg 
-
+./build/infer_photo ./data/marvel.jpg
 
 ```
 
