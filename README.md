@@ -20,7 +20,7 @@ https://kpzhang93.github.io/MTCNN_face_detection_alignment/paper/spl.pdf
 * CMake 3.2+
 
 
-## Building
+## Build
 
 ```bash
 git clone https://github.com/egcode/mtcnn-opencv.git
@@ -32,7 +32,7 @@ make
 ```
 
 
-## Running
+## Run
 
 ```bash
 cd mtcnn-opencv
