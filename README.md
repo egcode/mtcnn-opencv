@@ -38,7 +38,7 @@ make
 cd mtcnn-opencv
 
 # Camera Inference example (<app> <path_to_models_dir>):
-./build/infer_cam
+./build/infer_cam ./models
 
 
 # Photo Inference examples (<app> <path_to_test_image>):
