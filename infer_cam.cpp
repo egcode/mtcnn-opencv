@@ -7,9 +7,10 @@
 #include "mtcnn/detector.h"
 
 #include <iostream>
+#include <string>
 
 //// rm -rf build; mkdir build;cd build;cmake ..;make;cd ..
-//// ./build/infer_cam
+//// ./build/infer_cam ./models
 
 using namespace cv;
 using std::cout; using std::cerr; using std::endl;
@@ -37,19 +38,26 @@ int main(int argc, char **argv)
 {
     /////////////////////////////////////////////start mtcnn
 
+    if(argv[1] == NULL)
+    {
+        cerr << "ERROR: path argument should not be empty" << endl;
+        return 1;
+    }
+    std::string modelPath = argv[1];
+
     ProposalNetwork::Config pConfig;
-    pConfig.caffeModel = "./data/models/det1.caffemodel";
-    pConfig.protoText = "./data/models/det1.prototxt";
+    pConfig.caffeModel = modelPath + "/det1.caffemodel";
+    pConfig.protoText = modelPath + "/det1.prototxt";
     pConfig.threshold = 0.6f;
 
     RefineNetwork::Config rConfig;
-    rConfig.caffeModel = "./data/models/det2.caffemodel";
-    rConfig.protoText = "./data/models/det2.prototxt";
+    rConfig.caffeModel = modelPath + "/det2.caffemodel";
+    rConfig.protoText = modelPath + "/det2.prototxt";
     rConfig.threshold = 0.7f;
 
     OutputNetwork::Config oConfig;
-    oConfig.caffeModel = "./data/models/det3.caffemodel";
-    oConfig.protoText = "./data/models/det3.prototxt";
+    oConfig.caffeModel = modelPath + "/det3.caffemodel";
+    oConfig.protoText = modelPath + "/det3.prototxt";
     oConfig.threshold = 0.7f;
 
     MTCNNDetector detector(pConfig, rConfig, oConfig);
