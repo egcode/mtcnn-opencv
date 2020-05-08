@@ -37,17 +37,17 @@ make
 ```bash
 cd mtcnn-opencv
 
-# Camera Inference example (<app> <path_to_models_dir>):
+# Camera Inference example (<app_binary> <path_to_models_dir>):
 ./build/infer_cam ./models
 
 
-# Photo Inference examples (<app> <path_to_test_image>):
+# Photo Inference examples (<app_binary> <path_to_models_dir> <path_to_test_image>):
 
 # An image with 10 human faces
-./build/infer_photo ./data/got.jpg 
+./build/infer_photo ./models ./data/got.jpg 
 
 # An image with 46 human faces
-./build/infer_photo ./data/marvel.jpg
+./build/infer_photo ./models ./data/marvel.jpg
 
 ```
 

@@ -41,6 +41,9 @@ int main(int argc, char **argv)
     if(argv[1] == NULL)
     {
         cerr << "ERROR: path argument should not be empty" << endl;
+        std::cerr << "Usage " << ": "
+            << "<app_binary> "
+            << "<path_to_models_dir>\n";
         return 1;
     }
     std::string modelPath = argv[1];
