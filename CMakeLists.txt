@@ -15,6 +15,7 @@ set(SOURCES
 ./mtcnn/onet.cpp 
 ./mtcnn/pnet.cpp ./mtcnn/rnet.cpp
 ./mtcnn/detector.h ./mtcnn/helpers.h ./mtcnn/onet.h ./mtcnn/pnet.h ./mtcnn/rnet.h
+./draw.hpp
 )
 
 set(APP_SOURCES
